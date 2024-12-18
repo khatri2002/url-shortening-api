@@ -1,0 +1,57 @@
+@import "../../breakpoints.scss";
+
+.wrapper {
+  @apply overflow-hidden;
+
+  .container {
+    @apply mt-3 flex flex-col-reverse items-center gap-y-7 sm:mt-14 sm:w-screen sm:flex-row;
+    margin-right: 0px !important;
+
+    .text {
+      @apply mr-6 flex flex-col items-center sm:mr-0 sm:items-start;
+      width: 45%;
+      @media (width < $sm) {
+        width: 100%;
+      }
+
+      .title {
+        @apply text-center text-4xl font-bold sm:text-start sm:text-5xl md:text-6xl lg:text-7xl;
+        line-height: 5rem;
+        @media (width < $lg) {
+          line-height: 4rem;
+        }
+        @media (width < $md) {
+          line-height: 3.1rem;
+        }
+        @media (width < $sm) {
+          line-height: 2.2rem;
+        }
+      }
+
+      .desc {
+        @apply text-grayish-violet mt-4 text-center text-base font-medium sm:mt-0 sm:text-start md:text-lg lg:text-xl;
+        line-height: 2rem;
+        width: 75%;
+        @media (width < $md) {
+          line-height: 1.5rem;
+          width: 80%;
+        }
+        @media (width < $sm) {
+          width: 100%;
+        }
+      }
+
+      .btn {
+        @apply bg-cyan hover:bg-cyan/50 mt-5 rounded-full px-10 py-3 text-base font-semibold text-white transition duration-200 sm:mt-8 lg:mt-10 lg:text-lg;
+      }
+    }
+
+    .img {
+      @apply ml-36 sm:ml-0;
+      width: 55%;
+      @media (width < $sm) {
+        width: 130vw;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 nav {
-  @apply mt-6 flex items-center justify-between gap-x-9 px-6 py-2 sm:mt-7 sm:justify-start sm:px-8 sm:py-4 md:px-16 lg:px-40;
+  @apply mt-6 flex items-center justify-between gap-x-9 py-2 sm:mt-7 sm:justify-start sm:py-4;
 
   .logo img {
     @apply cursor-pointer;
@@ -12,7 +12,7 @@ nav {
       @apply flex flex-col items-center gap-6 sm:flex-row lg:gap-8;
 
       li span {
-        @apply sm:text-gray sm:hover:text-very-dark-violet cursor-pointer text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
+        @apply sm:text-grayish-violet sm:hover:text-very-dark-violet cursor-pointer text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
       }
     }
 
@@ -28,7 +28,7 @@ nav {
         @apply w-full text-center sm:w-auto;
 
         .login {
-          @apply sm:text-gray sm:hover:text-very-dark-violet text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
+          @apply sm:text-grayish-violet sm:hover:text-very-dark-violet text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
         }
 
         .signUp {

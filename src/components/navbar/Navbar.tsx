@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import styles from "./Navbar.module.scss";
+import commonStyles from "../../commonStyles.module.scss";
 
 import { Logo } from "../../assets/images";
 
@@ -11,7 +12,7 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   return (
-    <nav>
+    <nav className={commonStyles.container}>
       <div className={styles.logo}>
         <img src={Logo} alt="logo" />
       </div>
