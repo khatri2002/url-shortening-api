@@ -1,0 +1,52 @@
+nav {
+  @apply mt-6 flex items-center justify-between gap-x-9 px-6 py-2 sm:mt-7 sm:justify-start sm:px-8 sm:py-4 md:px-16 lg:px-40;
+
+  .logo img {
+    @apply cursor-pointer;
+  }
+
+  .navItems {
+    @apply bg-dark-Violet invisible absolute left-0 right-0 top-20 mx-auto flex w-11/12 flex-col items-center justify-between gap-y-6 rounded-lg p-8 opacity-0 transition duration-200 sm:visible sm:static sm:w-full sm:flex-row sm:rounded-none sm:bg-transparent sm:p-0 sm:opacity-100;
+
+    .nav {
+      @apply flex flex-col items-center gap-6 sm:flex-row lg:gap-8;
+
+      li span {
+        @apply sm:text-gray sm:hover:text-very-dark-violet cursor-pointer text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
+      }
+    }
+
+    .separator {
+      @apply bg-gray block w-full opacity-30 sm:hidden;
+      height: 1px;
+    }
+
+    .action {
+      @apply flex w-full flex-col items-center gap-6 sm:w-auto sm:flex-row lg:gap-8;
+
+      .item {
+        @apply w-full text-center sm:w-auto;
+
+        .login {
+          @apply sm:text-gray sm:hover:text-very-dark-violet text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
+        }
+
+        .signUp {
+          @apply bg-cyan hover:bg-cyan/50 w-full rounded-full px-6 py-2 text-base font-semibold text-white transition duration-200 sm:w-auto sm:text-sm md:text-base;
+        }
+      }
+    }
+
+    &.show {
+      @apply visible opacity-100;
+    }
+  }
+
+  .iconContainer {
+    @apply block sm:hidden;
+
+    .icon {
+      @apply text-3xl text-slate-500;
+    }
+  }
+}
