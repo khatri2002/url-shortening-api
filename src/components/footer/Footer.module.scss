@@ -1,0 +1,15 @@
+.container {
+  @apply flex flex-col items-center justify-center gap-y-4 bg-dark-Violet bg-cover bg-center bg-no-repeat p-14 sm:gap-y-7;
+  background-image: url("../../assets/images/bg-boost-desktop.svg");
+
+  h2 {
+    @apply text-nowrap text-center text-2xl font-semibold text-white sm:text-3xl lg:text-4xl;
+  }
+
+  button {
+    @apply rounded-full bg-cyan px-6 py-3 text-base font-semibold text-white transition duration-200 sm:px-8 lg:px-9 lg:text-lg;
+    &:hover {
+      background-color: #9eeaea;
+    }
+  }
+}
