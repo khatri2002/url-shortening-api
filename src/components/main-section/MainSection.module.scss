@@ -1,0 +1,86 @@
+@import "../../breakpoints.scss";
+
+.container {
+  @apply relative mt-36 bg-gray/20;
+
+  .form {
+    @apply absolute -top-20 left-0 right-0 mx-auto flex h-44 flex-col items-center justify-center gap-x-4 gap-y-8 rounded-lg bg-dark-Violet bg-cover bg-center bg-no-repeat px-6 sm:h-40 md:-top-16 md:h-32 md:flex-row md:justify-start md:px-12 lg:-top-20 lg:h-40 lg:gap-x-6 lg:px-16;
+    background-image: url("../../assets/images/bg-shorten-desktop.svg");
+    width: 80%;
+    @media (width < $sm) {
+      width: 87%;
+    }
+
+    .input {
+      @apply relative w-full;
+
+      input {
+        @apply w-full rounded-lg border-2 border-transparent px-5 py-3 text-base font-medium outline-none transition duration-200 focus:border-cyan lg:border-4 lg:px-6 lg:py-4 lg:text-lg;
+      }
+
+      .errorText {
+        @apply invisible absolute -bottom-5 left-0 text-xs font-medium italic text-red opacity-0 transition duration-200 md:-bottom-7 md:text-sm lg:text-base;
+      }
+
+      &.error {
+        input {
+          @apply border-red;
+        }
+
+        .errorText {
+          @apply visible opacity-100;
+        }
+      }
+    }
+
+    button {
+      @apply w-full text-nowrap rounded-lg border-2 border-cyan bg-cyan px-8 py-3 text-base font-semibold text-white transition duration-200 hover:border-transparent disabled:cursor-not-allowed disabled:border-gray disabled:bg-gray md:w-auto lg:border-4 lg:px-11 lg:py-4 lg:text-lg;
+      &:hover:enabled {
+        background-color: #9eeaea;
+      }
+    }
+  }
+
+  .space {
+    @apply h-24 sm:h-20;
+  }
+
+  .linksContainer {
+    @apply mt-5 space-y-4;
+
+    .item {
+      @apply flex flex-col items-center gap-x-7 gap-y-2 rounded-lg bg-white py-4 text-base font-medium sm:gap-y-4 md:flex-row md:px-5 md:py-2 lg:px-8 lg:py-4 lg:text-lg;
+
+      .longUrl {
+        @apply w-4/5 text-sm sm:text-base md:w-full;
+        @media (width < $sm) {
+          width: 90%;
+        }
+      }
+
+      .separator {
+        height: 1px;
+        @apply w-full bg-gray opacity-50 md:hidden;
+      }
+
+      .shortUrl {
+        @apply w-4/5 text-sm text-cyan sm:text-base md:w-auto;
+        @media (width < $sm) {
+          width: 90%;
+        }
+      }
+
+      .btn {
+        @apply w-4/5 rounded-lg bg-cyan py-2 text-sm text-white transition duration-200 hover:bg-cyan/50 sm:text-base md:w-40;
+
+        &.copied {
+          @apply cursor-default bg-very-dark-blue;
+        }
+
+        @media (width < $sm) {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
