@@ -9,6 +9,11 @@ import * as utils from "../../utils/utils";
 
 import commonStyles from "../../commonStyles.module.scss";
 import styles from "./MainSection.module.scss";
+import {
+  IconBrandRecognition,
+  IconDetailedRecords,
+  IconFullyCustomizable,
+} from "../../assets/images";
 
 const MainSection = () => {
   const {
@@ -71,7 +76,7 @@ const MainSection = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.formContainer}>
       <div className={commonStyles.container}>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <div
@@ -121,6 +126,49 @@ const MainSection = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div
+        className={`${commonStyles.container} ${styles.statisticsContainer}`}
+      >
+        <h2 className={styles.heroTitle}>Advanced Statistics</h2>
+        <span className={styles.heroDesc}>
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </span>
+        <div className={styles.cardsContainer}>
+          <div className={styles.card}>
+            <div className={styles.img}>
+              <img src={IconBrandRecognition} alt="icon-brand-recognition" />
+            </div>
+            <span className={styles.title}>Brand Recognition</span>
+            <span className={styles.desc}>
+              Boost your brand recognition with each click. Generic links don't
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </span>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.img}>
+              <img src={IconDetailedRecords} alt="icon-detailed-records" />
+            </div>
+            <span className={styles.title}>Detailed Records</span>
+            <span className={styles.desc}>
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </span>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.img}>
+              <img src={IconFullyCustomizable} alt="icon-fully-customizable" />
+            </div>
+            <span className={styles.title}>Fully Customizable</span>
+            <span className={styles.desc}>
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
