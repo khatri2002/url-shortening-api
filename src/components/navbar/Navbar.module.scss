@@ -1,52 +1,60 @@
 nav {
-  @apply mt-6 flex items-center justify-between gap-x-9 py-2 sm:mt-7 sm:justify-start sm:py-4;
+  @apply sticky top-0 z-50 mt-6 bg-white py-4 transition-all duration-300 sm:-top-full sm:mt-7 sm:opacity-90;
 
-  .logo img {
-    @apply cursor-pointer;
-  }
+  .container {
+    @apply flex items-center justify-between gap-x-9 sm:justify-start;
 
-  .navItems {
-    @apply bg-dark-Violet invisible absolute left-0 right-0 top-20 mx-auto flex w-11/12 flex-col items-center justify-between gap-y-6 rounded-lg p-8 opacity-0 transition duration-200 sm:visible sm:static sm:w-full sm:flex-row sm:rounded-none sm:bg-transparent sm:p-0 sm:opacity-100;
+    .logo img {
+      @apply cursor-pointer;
+    }
 
-    .nav {
-      @apply flex flex-col items-center gap-6 sm:flex-row lg:gap-8;
+    .navItems {
+      @apply invisible absolute left-0 right-0 top-20 mx-auto flex w-11/12 flex-col items-center justify-between gap-y-6 rounded-lg bg-dark-Violet p-8 opacity-0 transition duration-200 sm:visible sm:static sm:w-full sm:flex-row sm:rounded-none sm:bg-transparent sm:p-0 sm:opacity-100;
 
-      li span {
-        @apply sm:text-grayish-violet sm:hover:text-very-dark-violet cursor-pointer text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
+      .nav {
+        @apply flex flex-col items-center gap-6 sm:flex-row lg:gap-8;
+
+        li span {
+          @apply cursor-pointer text-base font-semibold text-white transition duration-200 sm:text-sm sm:text-grayish-violet sm:hover:text-very-dark-violet md:text-base;
+        }
+      }
+
+      .separator {
+        @apply block w-full bg-gray opacity-30 sm:hidden;
+        height: 1px;
+      }
+
+      .action {
+        @apply flex w-full flex-col items-center gap-6 sm:w-auto sm:flex-row lg:gap-8;
+
+        .item {
+          @apply w-full text-center sm:w-auto;
+
+          .login {
+            @apply text-base font-semibold text-white transition duration-200 sm:text-sm sm:text-grayish-violet sm:hover:text-very-dark-violet md:text-base;
+          }
+
+          .signUp {
+            @apply w-full rounded-full bg-cyan px-6 py-2 text-base font-semibold text-white transition duration-200 hover:bg-cyan/50 sm:w-auto sm:text-sm md:text-base;
+          }
+        }
+      }
+
+      &.show {
+        @apply visible opacity-100;
       }
     }
 
-    .separator {
-      @apply bg-gray block w-full opacity-30 sm:hidden;
-      height: 1px;
-    }
+    .iconContainer {
+      @apply block sm:hidden;
 
-    .action {
-      @apply flex w-full flex-col items-center gap-6 sm:w-auto sm:flex-row lg:gap-8;
-
-      .item {
-        @apply w-full text-center sm:w-auto;
-
-        .login {
-          @apply sm:text-grayish-violet sm:hover:text-very-dark-violet text-base font-semibold text-white transition duration-200 sm:text-sm md:text-base;
-        }
-
-        .signUp {
-          @apply bg-cyan hover:bg-cyan/50 w-full rounded-full px-6 py-2 text-base font-semibold text-white transition duration-200 sm:w-auto sm:text-sm md:text-base;
-        }
+      .icon {
+        @apply text-3xl text-slate-500;
       }
-    }
-
-    &.show {
-      @apply visible opacity-100;
     }
   }
 
-  .iconContainer {
-    @apply block sm:hidden;
-
-    .icon {
-      @apply text-3xl text-slate-500;
-    }
+  &.appear {
+    @apply top-0;
   }
 }
