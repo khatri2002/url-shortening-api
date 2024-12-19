@@ -13,3 +13,48 @@
     }
   }
 }
+
+.footer {
+  @apply bg-very-dark-violet py-12 sm:py-16;
+
+  .fContainer {
+    @apply flex flex-col items-center gap-x-10 gap-y-8 md:flex-row md:items-start lg:gap-x-14 xl:gap-x-24;
+
+    .img {
+      @apply flex-grow;
+
+      img {
+        @apply w-24 cursor-pointer sm:w-auto;
+        filter: invert(1) brightness(2);
+      }
+    }
+
+    .col {
+      @apply flex flex-col items-center text-sm font-medium sm:text-base md:items-start;
+
+      .title {
+        @apply text-white;
+      }
+
+      ul {
+        @apply mt-4 space-y-2 text-grayish-violet;
+
+        li {
+          @apply cursor-pointer text-center transition duration-200 hover:text-cyan md:text-start;
+        }
+      }
+    }
+
+    .socials {
+      @apply flex items-start gap-x-6 sm:gap-x-4 lg:gap-x-6;
+
+      img {
+        &:hover {
+          @apply cursor-pointer transition duration-200;
+          filter: invert(58%) sepia(93%) saturate(373%) hue-rotate(131deg)
+            brightness(103%) contrast(82%);
+        }
+      }
+    }
+  }
+}
